@@ -1,6 +1,6 @@
 body {
     font-family: "Roboto", sans-serif;
-    color: #434455;
+    color: #fff;
     background-color: #fff;
 }
 
@@ -70,7 +70,8 @@ button {
 
 /* header */
 .header {
-    border-bottom: 1px solid #e7e9fc;
+    background-color: black;
+    border-bottom: 1px solid #2f3147;
     box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
@@ -92,7 +93,7 @@ button {
     line-height: 1.17;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    color: #4d5ae5;
+    color: #ffffff;
 }
 
 .header-logo {
@@ -123,6 +124,7 @@ button {
     .header-nav {
         display: flex;
         align-items: center;
+        flex: 1;
     }
 
     .header-logo {
@@ -132,8 +134,11 @@ button {
 
     .header-nav-list {
         display: flex;
-        align-items: center;
+        
         gap: 40px;
+        margin-left: auto;
+        
+        
     }
 
     .header-nav-link {
@@ -143,7 +148,7 @@ button {
         font-size: 16px;
         line-height: 1.5;
         letter-spacing: 0.02em;
-        color: #2e2f42;
+        color: #ffffff;
         transition-property: color;
         transition-duration: 250ms;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -378,7 +383,7 @@ button {
 .solution {
     padding-top: 72px;
     padding-bottom: 72px;
-    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/concert.jpg");
+    background-image: url("../images/concert.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -386,48 +391,54 @@ button {
     margin: 0 auto;
 }
 
+.blue-word {
+    color: #4bb8ff;
+    
+}
+
 @media (min-resolution: 192dpi) {
     .solution {
-        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/concert.jpg");
+        background-image: url("../images/concert.jpg");
     }
 }
 
 .solution-title {
     font-weight: 700;
-    font-size: 36px;
+    font-size: 56px;
     line-height: 1.1;
     letter-spacing: 0.02em;
-    text-align: center;
+    text-align: left;
     color: #fff;
-    max-width: 216px;
+    
     margin: 0 auto;
-    margin-bottom: 72px;
+    margin-bottom: 24px;
 }
 
 .solution-button {
-    background-color: #4d5ae5;
+    background-color: hsl(51, 92%, 49%);
     border: none;
     display: block;
-    margin: 0 auto;
+    margin: 0;
     font-weight: 500;
     text-align: center;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.04em;
-    color: #fff;
-    border-radius: 4px;
-    padding: 16px 32px;
+    color: #000000;
+    border-radius: 12px;
+    padding: 16px 16px;
     min-width: 169px;
-    height: 56px;
+    height: 48px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
     transition-property: background-color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .solution-button:hover,
 .solution-button:focus {
-    background-color: #404bbf;
+    background-color: #4bbf40;
 }
 
 @media screen and (min-width:768px) {
@@ -435,20 +446,20 @@ button {
         padding-top: 112px;
         padding-bottom: 112px;
         max-width: 768px;
-        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/concert.jpg");
+        background-image: url("../images/concert.jpg");
     }
 
     @media (min-resolution: 192dpi) {
         .solution {
-            background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/concert.jpg");
+            background-image: url("../images/concert.jpg");
         }
     }
 
     .solution-title {
-        font-size: 56px;
+        font-size: 64px;
         line-height: 1.07;
-        max-width: 496px;
-        margin-bottom: 36px;
+        
+        margin-bottom: 24px;
     }
 }
 
@@ -457,17 +468,17 @@ button {
         padding-top: 188px;
         padding-bottom: 188px;
         max-width: 1440px;
-        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/concert.jpg");
+        background-image: url("../images/concert.jpg");
     }
 
     @media (min-resolution: 192dpi) {
         .solution {
-            background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url("../images/concert.jpg");
+            background-image: url("../images/concert.jpg");
         }
     }
 
     .solution-title {
-        margin-bottom: 48px;
+        margin-bottom: 24px;
     }
 }
 
@@ -496,12 +507,17 @@ button {
     text-align: center;
 }
 
-.about-text {
-    font-weight: 500;
+.solution-text {
+    font-weight: 400;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
-    max-width: 288px;
+    margin-bottom: 24px;
+    
+}
+
+.about-text {
+    margin-bottom: 24px;
 }
 
 @media screen and (min-width:768px) {
@@ -514,9 +530,7 @@ button {
         text-align: left;
     }
 
-    .about-text {
-        max-width: 356px;
-    }
+   
 }
 
 @media screen and (min-width:1158px) {
@@ -552,9 +566,7 @@ button {
         line-height: 1.2;
     }
 
-    .about-text {
-        font-weight: 400;
-    }
+   
 }
 
 /* team */
