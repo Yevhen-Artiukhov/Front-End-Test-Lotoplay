@@ -202,24 +202,50 @@ html {
 }
 
 .hero {
+    position: relative;
+
     min-height: 540px;
     display: flex;
     align-items: center;
-    background-image: linear-gradient(180deg,
-            rgba(0, 0, 0, 0.4),
-            rgba(5, 7, 17, 0.6)),
-        url("../images/concert.jpg");
-    background-size: cover;
-    background-position: center;
+
+    background-image: url("../images/concert.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* 🔥 середина по высоте */
+
+    --hero-max-width: 1920px;
+    background-size: var(--hero-max-width) auto;
+    margin: 0 auto;
+}
+
+/* Очень мягкий вертикальный градиент */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0.12),
+            rgba(5, 7, 17, 0.18));
+    pointer-events: none;
+}
+
+/* Лёгкое затемнение по бокам */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+            rgba(5, 7, 17, 0.15) 0%,
+            transparent 25%,
+            transparent 75%,
+            rgba(5, 7, 17, 0.15) 100%);
+    pointer-events: none;
 }
 
 .hero-container {
     padding: 80px 0;
-}
-
-.hero-title {
-    font-size: 36px;
-    margin-bottom: 24px;
+    position: relative;
+    z-index: 2;
 }
 
 .about-text {
@@ -246,6 +272,8 @@ html {
     background-color: #ffd64a;
     transform: translateY(-1px);
 }
+
+
 
 .concerts-card {
     background-color: var(--bg-card);
@@ -303,8 +331,11 @@ html {
 
 .member-image {
     width: 100%;
-    height: 220px;
+    aspect-ratio: 1 / 1;
+    /* ← делает изображение квадратным */
     object-fit: cover;
+    object-position: top;
+    /* можно поменять на center */
     transition: 0.3s;
 }
 
@@ -316,26 +347,48 @@ html {
     padding: 12px 16px;
 }
 
+.history {
+    background: linear-gradient(90deg,
+            #151820 0%,
+            #1a1a22 40%,
+            #221319 100%);
+    padding: 60px 0;
+    
+}
+
 .history-wrapper {
     display: flex;
     flex-direction: column;
     gap: 24px;
 }
 
-@media (min-width: 900px) {
-    .history-wrapper {
-        flex-direction: row;
+@media (max-width: 900px) {
+    .history-img {
+        float: none;
+        width: 100%;
+        margin: 16px 0;
     }
 }
 
 .history-text {
-    flex: 1.2;
+    
     line-height: 1.6;
 }
 
-.history-image img {
-    border-radius: 16px;
-    width: 100%;
+.history-img {
+    float: right;
+    width: 40%;
+    max-width: 380px;
+    
+    margin: 0 0 16px 24px;
+}
+
+.contacts {
+    background: linear-gradient(90deg,
+            #162028 0%,
+            #1c1f27 40%,
+            #27171d 100%);
+    padding: 60px 0;
 }
 
 .contacts-wrapper {
