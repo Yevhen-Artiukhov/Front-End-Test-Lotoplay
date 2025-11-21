@@ -211,14 +211,13 @@ html {
     background-image: url("../images/concert.jpg");
     background-repeat: no-repeat;
     background-position: center center;
-    /* 🔥 середина по высоте */
-
+   
     --hero-max-width: 1920px;
     background-size: var(--hero-max-width) auto;
     margin: 0 auto;
 }
 
-/* Очень мягкий вертикальный градиент */
+
 .hero::before {
     content: "";
     position: absolute;
@@ -229,7 +228,7 @@ html {
     pointer-events: none;
 }
 
-/* Лёгкое затемнение по бокам */
+
 .hero::after {
     content: "";
     position: absolute;
@@ -243,7 +242,7 @@ html {
 }
 
 .hero-container {
-    padding: 80px 0;
+    padding: 80px 24px;
     position: relative;
     z-index: 2;
 }
@@ -274,6 +273,14 @@ html {
 }
 
 
+
+.concerts {
+    background: linear-gradient(90deg,
+            #151820 0%,
+            #1a1a22 40%,
+            #221319 100%);
+    padding: 60px 0;
+}
 
 .concerts-card {
     background-color: var(--bg-card);
@@ -311,40 +318,126 @@ html {
     transform: translateY(-1px);
 }
 
+@media (max-width: 440px) {
+
+   
+    .concerts-table thead {
+        display: none;
+    }
+
+    
+    .concerts-table tbody tr {
+        display: block;
+        padding: 12px 14px;
+        margin-bottom: 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background-color: rgba(5, 7, 17, 0.7);
+    }
+
+    
+    .concerts-table tbody td {
+        display: block;
+        width: 100%;
+        padding: 4px 0;
+        border-top: none;
+    }
+
+    
+    .concerts-table tbody td::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 12px;
+        color: var(--text-muted);
+        margin-bottom: 2px;
+    }
+
+   
+    .concerts-city {
+        font-weight: 600;
+        font-size: 15px;
+    }
+
+   
+    .concerts-table tbody td:last-child {
+        margin-top: 8px;
+    }
+
+    .concerts-btn {
+        display: inline-block;
+        width: auto;
+        
+        padding: 6px 14px;
+        margin-top: 2px;
+    }
+}
+
+.members {
+    padding: 60px 0;
+}
+
+
 .members-list {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
 }
 
-@media (min-width: 768px) {
+
+@media (min-width: 600px) {
     .members-list {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
+
+
+@media (min-width: 900px) {
+    .members-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
 
 .member-card {
     background-color: var(--bg-card);
     border-radius: 16px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
+
 
 .member-image {
     width: 100%;
     aspect-ratio: 1 / 1;
-    /* ← делает изображение квадратным */
+    
     object-fit: cover;
     object-position: top;
-    /* можно поменять на center */
-    transition: 0.3s;
+    display: block;
+    transition: transform 0.3s;
 }
+
 
 .member-card:hover .member-image {
     transform: scale(1.03);
 }
 
+
 .member-info {
     padding: 12px 16px;
+}
+
+
+@media (max-width: 480px) {
+    .members-list {
+        justify-items: center;
+    }
+
+    .member-card {
+        width: 100%;
+        max-width: 320px;
+        
+    }
 }
 
 .history {
@@ -353,7 +446,6 @@ html {
             #1a1a22 40%,
             #221319 100%);
     padding: 60px 0;
-    
 }
 
 .history-wrapper {
@@ -362,25 +454,27 @@ html {
     gap: 24px;
 }
 
+
+.history-text {
+    line-height: 1.6;
+}
+
+
+.history-img {
+    float: right;
+    width: 40%;
+    max-width: 380px;
+    margin: 0 0 16px 24px;
+    border-radius: 16px;
+}
+
+
 @media (max-width: 900px) {
     .history-img {
         float: none;
         width: 100%;
         margin: 16px 0;
     }
-}
-
-.history-text {
-    
-    line-height: 1.6;
-}
-
-.history-img {
-    float: right;
-    width: 40%;
-    max-width: 380px;
-    
-    margin: 0 0 16px 24px;
 }
 
 .contacts {
