@@ -527,11 +527,41 @@ html {
 
 .contact-submit {
     padding: 10px 24px;
-    border-radius: 50px;
-    border: none;
-    background-color: var(--accent-red);
-    color: #fff;
-    cursor: pointer;
+        border-radius: 50px;
+        border: none;
+        background-color: var(--accent-red);
+        color: #fff;
+        cursor: pointer;
+    
+        width: auto;
+     
+        justify-self: flex-start;
+       
+}
+
+@media (max-width: 900px) {
+    .contacts-map {
+        text-align: center;
+        /* заголовок и всё содержимое по центру */
+    }
+
+    .contacts-map-title {
+        text-align: center;
+        margin-bottom: 12px;
+    }
+
+    .map-wrapper {
+        max-width: 420px;
+        /* чтобы карта не была слишком узкой/широкой */
+        margin: 0 auto;
+        /* центрируем блок с картой */
+    }
+
+    .map-placeholder {
+        width: 100%;
+        height: 320px;
+        /* при необходимости высоту можно подправить */
+    }
 }
 
 .backdrop {
@@ -645,4 +675,31 @@ html {
 .footer-links {
     display: flex;
     gap: 16px;
+}
+
+
+/* BURGER VISIBILITY FIX */
+
+
+.header-nav-list {
+    display: flex;
+    gap: 24px;
+}
+
+.burger-btn {
+    display: none;
+  
+}
+
+
+@media (max-width: 900px) {
+
+    .header-nav-list {
+        display: none;
+    }
+
+    .burger-btn {
+        display: flex !important;
+      
+    }
 }
