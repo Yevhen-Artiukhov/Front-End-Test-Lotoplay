@@ -600,6 +600,30 @@ html {
     }
 }
 
+/* По умолчанию — ссылка выключена, карта обычная */
+.map-link {
+    display: none;
+}
+
+/* На мобильных — ссылка перекрывает iframe */
+@media (max-width: 768px) {
+    .map-wrapper {
+        position: relative;
+    }
+
+    .map-link {
+        display: block;
+        position: absolute;
+        inset: 0;
+        z-index: 5;
+    }
+
+    .map-placeholder {
+        pointer-events: none;
+        /* ← чтобы iframe не перехватывал жесты */
+    }
+}
+
 .backdrop {
     position: fixed;
     inset: 0;
