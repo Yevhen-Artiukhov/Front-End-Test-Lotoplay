@@ -519,18 +519,18 @@ html {
 .contact-form {
     flex: 1;
     background-color: transparent;
-    /* ← убрали фон */
+   
     padding: 0;
-    /* ← чтобы поля стали без рамки фона */
+    
     border-radius: 0;
-    /* ← чтобы не было карточки */
+    
     display: grid;
     gap: 16px;
 }
 
 .contacts-map {
     background-color: var(--bg-card-soft);
-    /* фон остаётся */
+   
     padding: 20px;
     border-radius: 16px;
 }
@@ -578,7 +578,7 @@ html {
 @media (max-width: 900px) {
     .contacts-map {
         text-align: center;
-        /* заголовок и всё содержимое по центру */
+       
     }
 
     .contacts-map-title {
@@ -588,24 +588,18 @@ html {
 
     .map-wrapper {
         max-width: 420px;
-        /* чтобы карта не была слишком узкой/широкой */
         margin: 0 auto;
-        /* центрируем блок с картой */
     }
 
     .map-placeholder {
         width: 100%;
         height: 320px;
-        /* при необходимости высоту можно подправить */
     }
 }
-
-/* По умолчанию — ссылка выключена, карта обычная */
 .map-link {
     display: none;
 }
 
-/* На мобильных — ссылка перекрывает iframe */
 @media (max-width: 768px) {
     .map-wrapper {
         position: relative;
@@ -620,7 +614,6 @@ html {
 
     .map-placeholder {
         pointer-events: none;
-        /* ← чтобы iframe не перехватывал жесты */
     }
 }
 
@@ -785,7 +778,6 @@ button.modal-submit {
 }
 
 @media (max-width: 768px) {
-
     button,
     .concerts-btn,
     .contact-submit,
@@ -798,13 +790,11 @@ button.modal-submit {
     }
 }
 
-/* Бургер чётко фиксируется внутри хедера на мобильных */
 @media (max-width: 768px) {
     .header {
         position: relative;
         z-index: 50;
         padding: 12px 16px;
-        /* безопасные отступы */
     }
 
     .header-container {
@@ -819,19 +809,14 @@ button.modal-submit {
     }
 }
 
-/* Супер-точная фиксация бургера в самом правом верхнем углу */
 @media (max-width: 768px) {
     .burger-btn {
         position: fixed;
         top: 10px;
-        /* подними/опусти как нужно */
         right: 12px;
-        /* левее/правее при необходимости */
         z-index: 9999;
-        /* поверх всех элементов */
     }
 
-    /* Чтобы бургер не перекрывал лого — уменьшаем правый паддинг хедера */
     .header {
         padding-right: 48px;
     }
