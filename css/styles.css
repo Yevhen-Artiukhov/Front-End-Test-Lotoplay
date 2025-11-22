@@ -518,11 +518,21 @@ html {
 
 .contact-form {
     flex: 1;
-    background-color: var(--bg-card-soft);
-    padding: 20px;
-    border-radius: 16px;
+    background-color: transparent;
+    /* ← убрали фон */
+    padding: 0;
+    /* ← чтобы поля стали без рамки фона */
+    border-radius: 0;
+    /* ← чтобы не было карточки */
     display: grid;
     gap: 16px;
+}
+
+.contacts-map {
+    background-color: var(--bg-card-soft);
+    /* фон остаётся */
+    padding: 20px;
+    border-radius: 16px;
 }
 
 @media (min-width: 900px) {
