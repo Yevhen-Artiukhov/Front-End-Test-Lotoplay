@@ -494,6 +494,16 @@ html {
     padding: 60px 0;
 }
 
+@media (min-width: 900px) {
+
+    #contacts .section-title,
+    .contacts-subtitle {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 .contacts-wrapper {
     display: flex;
     flex-direction: column;
@@ -513,6 +523,13 @@ html {
     border-radius: 16px;
     display: grid;
     gap: 16px;
+}
+
+@media (min-width: 900px) {
+    .contact-form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: start;
+    }
 }
 
 .form-field {
@@ -710,5 +727,78 @@ html {
     .burger-btn {
         display: flex !important;
       
+    }
+}
+
+@media (max-width: 480px) {
+
+    .section-title,
+    h1,
+    h2,
+    h3,
+    p,
+    .contacts-map-title {
+        text-align: center;
+    }
+}
+
+button,
+button.contact-submit,
+button.concerts-btn,
+button.solution-button,
+button.modal-submit {
+    border-radius: 12px !important;
+}
+
+@media (max-width: 768px) {
+
+    button,
+    .concerts-btn,
+    .contact-submit,
+    .solution-button,
+    .modal-submit {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+}
+
+/* Бургер чётко фиксируется внутри хедера на мобильных */
+@media (max-width: 768px) {
+    .header {
+        position: relative;
+        z-index: 50;
+        padding: 12px 16px;
+        /* безопасные отступы */
+    }
+
+    .header-container {
+        position: relative;
+    }
+
+    .burger-btn {
+        position: absolute;
+        top: 12px;
+        right: 16px;
+        z-index: 60;
+    }
+}
+
+/* Супер-точная фиксация бургера в самом правом верхнем углу */
+@media (max-width: 768px) {
+    .burger-btn {
+        position: fixed;
+        top: 10px;
+        /* подними/опусти как нужно */
+        right: 12px;
+        /* левее/правее при необходимости */
+        z-index: 9999;
+        /* поверх всех элементов */
+    }
+
+    /* Чтобы бургер не перекрывал лого — уменьшаем правый паддинг хедера */
+    .header {
+        padding-right: 48px;
     }
 }
